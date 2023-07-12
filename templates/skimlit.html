@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Processing App</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: auto;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .output-group {
+            margin-top: 20px;
+        }
+
+        .output-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .output-group p {
+            padding: 10px;
+            background-color: #333;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/">
+        <div class="input-group">
+            <label for="input_text">Enter Text:</label>
+            <textarea name="input_text" id="input_text" rows="6" cols="50"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Process</button>
+    </form>
+        {% if flag %}
+        <div class="output-group">
+            {% if BACKGROUND != '' %}
+            <label>BACKGROUND:</label>
+            <p>{{ BACKGROUND }}</p>
+            {% endif %}
+            {% if CONCLUSIONS != '' %}
+            <label>CONCLUSIONS:</label>
+            <p>{{ CONCLUSIONS }}</p>
+            {% endif %}
+            {% if METHODS != '' %}
+            <label>METHODS:</label>
+            <p>{{ METHODS }}</p>
+            {% endif %}
+            {% if OBJECTIVE != '' %}
+            <label>OBJECTIVE:</label>
+            <p>{{ OBJECTIVE }}</p>
+            {% endif %}
+            {% if RESULTS != '' %}
+            <label>RESULTS:</label>
+            <p>{{ RESULTS }}</p>
+            {% endif %}
+            
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
